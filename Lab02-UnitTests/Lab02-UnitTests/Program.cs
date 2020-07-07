@@ -20,9 +20,9 @@ namespace Lab02_UnitTests
             {
                 Console.WriteLine("How can we help ya today?");
                 Console.WriteLine(@"1. Withdraw
-                2. Deposit
-                3. View Balance
-                4. Exit");
+2. Deposit
+3. View Balance
+4. Exit");
                 choice = int.Parse(Console.ReadLine());
                 string repeat = "y";
                 switch (choice)
