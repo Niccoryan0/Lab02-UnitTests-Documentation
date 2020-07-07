@@ -6,12 +6,17 @@ namespace Lab02_UnitTests
     {
         public static decimal Balance = 2000;
 
+        /// <summary>
+        /// Runs the user interface function to display console application.
+        /// </summary>
         static void Main(string[] args)
         {
             UserInterface();
         }
 
-
+        /// <summary>
+        /// Runs the user interface for the console application, takes in user input and calls functions for what the user wants to do.
+        /// </summary>
         public static void UserInterface()
         {
             Console.WriteLine("Hello and welcome to N&R Banking Inc.!");
@@ -72,6 +77,11 @@ namespace Lab02_UnitTests
             } while (choice != 4);
         }
 
+        /// <summary>
+        /// Handles withdrawing funds.
+        /// </summary>
+        /// <param name="amount">Amount to be withdrawn</param>
+        /// <returns>Returns the new balance if the amount is valid and -1 if not</returns>
         public static decimal Withdraw(decimal amount)
         {
             if (amount > 0 && amount <= Balance)
@@ -83,6 +93,11 @@ namespace Lab02_UnitTests
             }
         }
 
+        /// <summary>
+        /// Handles depositing funds.
+        /// </summary>
+        /// <param name="amount">Amount to be deposited</param>
+        /// <returns>Returns the new balance if the amount is valid and -1 if not</returns>
         public static decimal Deposit(decimal amount)
         {
             if (amount > 0)
@@ -95,6 +110,10 @@ namespace Lab02_UnitTests
             }
         }
 
+        /// <summary>
+        /// Shows the user their balance.
+        /// </summary>
+        /// <returns>Current balance</returns>
         public static decimal ViewBalance()
         {
             return Balance;
