@@ -28,8 +28,6 @@ Then select and open ```Lab02-UnitTests.sln```
 ---
 
 ### Visuals
-***[Add screenshots of your application in action]***
-
 #### Application in Action
 ![Image 1](/assets/Lab02-UnitTests.png)
 
@@ -37,5 +35,4 @@ Then select and open ```Lab02-UnitTests.sln```
 ---
 
 ### Change Log
-***[The change log will list any changes made to the code base. This includes any changes from TA/Instructor feedback]***  
 1.0: *Initial release* - 7 July 2020
