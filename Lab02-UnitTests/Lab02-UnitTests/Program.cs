@@ -2,7 +2,7 @@
 
 namespace Lab02_UnitTests
 {
-    class Program
+    public class Program
     {
         public static decimal Balance = 2000;
 
@@ -12,7 +12,7 @@ namespace Lab02_UnitTests
         }
 
 
-        static void UserInterface()
+        public static void UserInterface()
         {
             Console.WriteLine("Hello and welcome to N&R Banking Inc.!");
             int choice;
@@ -33,10 +33,11 @@ namespace Lab02_UnitTests
                         decimal newBal = Withdraw(withdrawAmount);
                         if (newBal > 0)
                         {
-                            Console.WriteLine($"Withdraw of {withdrawAmount} successful! New balance: {newBal} ")
-                        } else
+                            Console.WriteLine($"Withdraw of {withdrawAmount} successful! New balance: {newBal} ");
+                        } 
+                        else
                         {
-                            Console.WriteLine($"There was an issue with your withdrawl, cannot withdraw amount : {withdrawAmount} from current balance: {Balance}")
+                            Console.WriteLine($"There was an issue with your withdrawl, cannot withdraw amount : {withdrawAmount} from current balance: {Balance}");
                         }
                         break;
                     case 2:
@@ -65,7 +66,7 @@ namespace Lab02_UnitTests
 
         public static decimal Withdraw(decimal amount)
         {
-            if (amount > 0 && amount < Balance)
+            if (amount > 0 && amount <= Balance)
             {
                 return Balance -= amount;
             } else
