@@ -30,10 +30,10 @@ namespace Lab02_UnitTests
                     case 1:
                         Console.WriteLine("Amount to withdraw: ");
                         decimal withdrawAmount = Decimal.Parse(Console.ReadLine());
-                        decimal newBal = Withdraw(withdrawAmount);
-                        if (newBal > 0)
+                        decimal newBalWith = Withdraw(withdrawAmount);
+                        if (newBalWith > 0)
                         {
-                            Console.WriteLine($"Withdraw of {withdrawAmount} successful! New balance: {newBal} ");
+                            Console.WriteLine($"Withdraw of {withdrawAmount} successful! New balance: {newBalWith} ");
                         } 
                         else
                         {
@@ -43,7 +43,15 @@ namespace Lab02_UnitTests
                     case 2:
                         Console.WriteLine("Amount to deposit: ");
                         decimal depositAmount = Decimal.Parse(Console.ReadLine());
-                        // Deposit(depositAmount);
+                        decimal newBalDep = Deposit(depositAmount);
+                        if (newBalDep > 0)
+                        {
+                            Console.WriteLine($"Deposit of {depositAmount} successful! New balance: {newBalDep} ");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"There was an issue with your deposit, cannot deposit amount : {depositAmount}");
+                        }
                         break;
                     case 3:
                         // ViewBalance();
@@ -70,6 +78,18 @@ namespace Lab02_UnitTests
             {
                 return Balance -= amount;
             } else
+            {
+                return -1;
+            }
+        }
+
+        public static decimal Deposit(decimal amount)
+        {
+            if (amount > 0)
+            {
+                return Balance += amount;
+            }
+            else
             {
                 return -1;
             }
