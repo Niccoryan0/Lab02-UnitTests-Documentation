@@ -46,5 +46,28 @@ namespace Lab02_Tests
             Program.Balance = balance;
             Assert.Equal(-1, Program.Deposit(amount));
         }
+
+        [Theory]
+        [InlineData(1500, 500)]
+        [InlineData(2000, 0)]
+        [InlineData(0.01, 1999.99)]
+        public void ViewBalanceAfterWithdraw(decimal amount, decimal expected)
+        {
+            Program.Balance = 2000;
+            Program.Withdraw(amount);
+            Assert.Equal(expected, Program.Balance);
+        }
+
+        [Theory]
+        [InlineData(2000, 4000)]
+        [InlineData(10, 2010)]
+        [InlineData(0.01, 2000.01)]
+
+        public void ViewBalanceAfterDeposit(decimal amount, decimal expected)
+        {
+            Program.Balance = 2000;
+            Program.Deposit(amount);
+            Assert.Equal(expected, Program.Balance);
+        }
     }
 }

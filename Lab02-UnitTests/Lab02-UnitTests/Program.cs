@@ -54,7 +54,7 @@ namespace Lab02_UnitTests
                         }
                         break;
                     case 3:
-                        // ViewBalance();
+                        Console.WriteLine($"Your current balance is : {ViewBalance()}");
                         break;
                     case 4:
                         repeat = "n";
@@ -93,6 +93,11 @@ namespace Lab02_UnitTests
             {
                 return -1;
             }
+        }
+
+        public static decimal ViewBalance()
+        {
+            return Balance;
         }
     }
 }
