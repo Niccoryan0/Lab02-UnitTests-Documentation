@@ -36,7 +36,7 @@ namespace Lab02_UnitTests
                         Console.WriteLine("Amount to withdraw: ");
                         decimal withdrawAmount = Decimal.Parse(Console.ReadLine());
                         decimal newBalWith = Withdraw(withdrawAmount);
-                        if (newBalWith > 0)
+                        if (newBalWith >= 0)
                         {
                             Console.WriteLine($"Withdraw of {withdrawAmount} successful! New balance: {newBalWith} ");
                         } 
